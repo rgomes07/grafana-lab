@@ -1,0 +1,44 @@
+services:
+  grafana:
+
+    image: grafana/grafana-enterprise
+
+    user: "0"
+    environment:
+      - GF_SERVER_ROOT_URL=http://grafana.lab.gomes.local
+      - GF_SERVER_DOMAIN=grafana.lab.gomes.local
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+        mode: host
+
+    volumes:
+      - /storage/grafana-lab/data:/var/lib/grafana
+
+    networks:
+      - edge_network
+        aliases:
+          - grafana
+
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1G
+        
+      reservations:
+        cpus: "0.25"
+        memory: 256M
+
+      placement:
+        constraints:
+          - node.hostname == dck01
+
+      restart_policy:
+        condition: any
+
+networks:
+  edge_network:
+    external: true
