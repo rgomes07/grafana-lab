@@ -25,7 +25,7 @@ O Grafana está integrado ao nosso ecossistema de containers e alta disponibilid
 
 
 
-## ✅ Vantagens para a SEDUC
+## ✅ Vantagens
 
 1.  **Tomada de Decisão:** Dados concretos para planejar upgrades de link de internet.
 2.  **Segurança:** Identificação de comportamentos anômalos que possam indicar ataques ou vazamento de dados.
