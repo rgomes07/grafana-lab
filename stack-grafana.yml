@@ -1,3 +1,5 @@
+version: "3.8"
+
 services:
   grafana:
 
@@ -14,7 +16,7 @@ services:
         mode: host
 
     volumes:
-      - /storage/grafana-lab/data:/var/lib/grafana
+      - /storage/grafana-seduc/data:/var/lib/grafana
 
     networks:
       - edge_network
