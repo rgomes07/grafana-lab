@@ -19,7 +19,7 @@ services:
       - /storage/grafana-seduc/data:/var/lib/grafana
 
     networks:
-      - edge_network
+      - edge_network:
         aliases:
           - grafana
 
